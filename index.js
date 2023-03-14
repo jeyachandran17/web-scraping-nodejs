@@ -5,6 +5,7 @@ import express from "express"; // "type": "module"
 import cors from "cors";
 import { MongoClient } from "mongodb";
 import mobileRouter from "./router/mobiles.router.js"
+import earphoneRouter from "./router/earphone.router.js"
 const app = express();
 
 app.use(express.json());
@@ -22,6 +23,7 @@ app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 web scraping🎊✨🤩");
 });
 
-app.use('/mobiles',mobileRouter)
+app.use('/mobiles', mobileRouter);
+app.use('/earphones', earphoneRouter);
 
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
