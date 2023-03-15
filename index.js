@@ -6,6 +6,7 @@ import cors from "cors";
 import { MongoClient } from "mongodb";
 import mobileRouter from "./router/mobiles.router.js"
 import earphoneRouter from "./router/earphone.router.js"
+import watchRouter from "./router/smartwatch.router.js"
 const app = express();
 
 app.use(express.json());
@@ -25,5 +26,6 @@ app.get("/", function (request, response) {
 
 app.use('/mobiles', mobileRouter);
 app.use('/earphones', earphoneRouter);
+app.use('/smartwatch', watchRouter);
 
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
